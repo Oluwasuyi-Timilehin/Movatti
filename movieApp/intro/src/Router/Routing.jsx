@@ -1,0 +1,22 @@
+import React from 'react'
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import Homepage from '../Pages/Homepage'
+
+import Popularpage from '../Pages/Popularpage'
+import MovieDetails from '../Components/MovieDetails'
+
+const Routing = () => {
+  return (
+    <>
+    <BrowserRouter>
+    <Routes>
+          <Route path='/' element={<Homepage />} />
+          <Route path='/MovieDetails/:id' element={<MovieDetails/>} />
+        <Route path='/popularpage' element={<Popularpage/>}/>
+    </Routes>
+    </BrowserRouter>
+    </>
+  )
+}
+
+export default Routing
