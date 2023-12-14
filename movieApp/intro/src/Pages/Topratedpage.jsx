@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
+import Tophero from '../Components/Tophero'
 import Navbar from '../Components/Navbar'
-import Pophero from '../Components/Pophero'
-import Popmovie from '../Components/Popmovie'
+import Topmovie from '../Components/Topmovie';
 
-const Popularpage = () => {
-  const [pmovie, setPmovie] = useState([]);
+const Topratedpage = () => {
 
-  useEffect(() => {
-    const fetchPopularMovies = async () => {
+    const [tmovie, setTmovie] = useState([]);
+
+    useEffect(() => {
+         const TopRatedMovies = async () => {
       const options = {
         method: "GET",
         headers: {
@@ -19,26 +20,26 @@ const Popularpage = () => {
 
       try {
         const response = await fetch(
-          "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
+          "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
           options
         );
         const data = await response.json();
-        setPmovie(data.results);
+        setTmovie(data.results);
       } catch (error) {
         console.error(error);
       }
     };
 
-    fetchPopularMovies();
+    TopRatedMovies();
   }, []);
-  
+   
   return (
     <>
       <Navbar />
-      <Pophero />
-      <Popmovie pmovie={pmovie} />
+      <Tophero />
+      <Topmovie tmovie={tmovie} />
     </>
   );
 }
 
-export default Popularpage
+export default Topratedpage

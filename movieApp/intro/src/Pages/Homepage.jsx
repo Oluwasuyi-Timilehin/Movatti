@@ -1,13 +1,12 @@
-import React, {useEffect, useState} from 'react'
-import Navbar from '../Components/Navbar'
-import Hero from '../Components/Hero'
-import SearchBar from '../Components/SearchBar'
-import Movies from '../Components/Movies'
+import React, { useEffect, useState } from "react";
+import Navbar from "../Components/Navbar";
+import Hero from "../Components/Hero";
+import SearchBar from "../Components/SearchBar";
+import Movies from "../Components/Movies";
 
 const Homepage = () => {
-
-  const [query, setQuery] = useState("")
-  const [searchResult, setSearchResult] = useState([{}])
+  const [query, setQuery] = useState("");
+  const [searchResult, setSearchResult] = useState([{}]);
 
   const options = {
     method: "GET",
@@ -18,7 +17,7 @@ const Homepage = () => {
     },
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`,
       options
@@ -26,17 +25,17 @@ const Homepage = () => {
       .then((response) => response.json())
       .then((response) => setSearchResult(response.results))
       .catch((err) => console.error(err));
-  },[query])
+  }, [query]);
 
-  console.log(searchResult)
+  console.log(searchResult);
   return (
     <>
-    <Navbar/>
-    <Hero/>
-    <SearchBar setQuery={setQuery}/>
-    <Movies searchResult={searchResult}/>
+      <Navbar />
+      <Hero />
+      <SearchBar setQuery={setQuery} />
+      <Movies searchResult={searchResult} />
     </>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;

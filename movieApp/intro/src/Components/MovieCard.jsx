@@ -1,15 +1,18 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({ searchResult }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <>
       {searchResult.map((searchResult) => (
-        <div key={searchResult.id} className="h-96 w-72 rounded-xl shadow-lg"
+        <div
+          key={searchResult.id}
+          className="h-96 rounded-xl shadow-lg"
           onClick={() => {
-           navigate(`/MovieDetails/${searchResult.id}`)
-        }}>
+            navigate(`/MovieDetails/${searchResult.id}`);
+          }}
+        >
           <img
             src={`https://image.tmdb.org/t/p/w500/${searchResult.poster_path}`}
             alt=""
@@ -22,6 +25,6 @@ const MovieCard = ({ searchResult }) => {
       ))}
     </>
   );
-}
+};
 
-export default MovieCard
+export default MovieCard;
