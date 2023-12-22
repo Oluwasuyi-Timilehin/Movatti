@@ -14,16 +14,16 @@ const Navbar = () => {
           </Link>
 
           <div className="space-x-10 hidden lg:flex">
-            <NavLink to="/" activeClassName="active">
+            <NavLink to="/" activeclassname="active">
               Discover
             </NavLink>
-            <NavLink to="/popularpage" activeClassName="active">
+            <NavLink to="/popularpage" activeclassname="active">
               Popular
             </NavLink>
-            <NavLink to="/topratedpage" activeClassName="active">
+            <NavLink to="/topratedpage" activeclassname="active">
               Top Rated
             </NavLink>
-            <NavLink to="/favorite" activeClassName="active">
+            <NavLink to="/favorite" activeclassname="active">
               Upcoming
             </NavLink>
           </div>
@@ -51,20 +51,24 @@ const Navbar = () => {
         className={`fixed ${display} bg-primary text-white top-12 w-full z-40 border-b border-secondary lg:hidden`}
       >
         <div className="space-y-7 flex justify-center items-center flex-col py-10">
-          <NavLink to="/" activeClassName="active" className="text-lg">
+          <NavLink to="/" activeclassname="active" className="text-lg">
             Discover
           </NavLink>
           <NavLink
             to="/popularpage"
-            activeClassName="active"
+            activeclassname="active"
             className="text-lg"
           >
             Popular
           </NavLink>
-          <NavLink to="/topratedpage" activeClassName="active" className="text-lg">
+          <NavLink
+            to="/topratedpage"
+            activeclassname="active"
+            className="text-lg"
+          >
             Top Rated
           </NavLink>
-          <NavLink to="/favorite" activeClassName="active" className="text-lg">
+          <NavLink to="/favorite" activeclassname="active" className="text-lg">
             Upcoming
           </NavLink>
         </div>

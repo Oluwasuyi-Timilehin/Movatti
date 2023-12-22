@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { Link, NavLink } from "react-router-dom";
 import { FaDownload } from "react-icons/fa6";
 import { CiStreamOn } from "react-icons/ci";
-import { MdFavoriteBorder } from "react-icons/md";
 import { AiOutlineMenu } from "react-icons/ai";
 import Sidebar from "./Sidebar";
 
@@ -18,31 +17,6 @@ const MovieDetails = () => {
     const minutes = runtime % 60;
     return `${hours}h ${minutes}m`;
   };
-  const [showMessage, setShowMessage] = useState(false);
-  const [iconColor, setIconColor] = useState("#010025");
-
-  const handleAddToFavorites = (movieId) => {
-    setShowMessage(true);
-    setIconColor("black"); // Change icon color to black
-
-    const favoriteMovies =
-      JSON.parse(localStorage.getItem("favoriteMovies")) || [];
-
-    const isMovieInFavorites = favoriteMovies.find(
-      (movie) => movie.id === movieId
-    );
-    if (!isMovieInFavorites) {
-      // If the movie is not in favorites, add it to the list
-      favoriteMovies.push({ id: movieId });
-    } // You can add more movie details here
-    localStorage.setItem("favoriteMovies", JSON.stringify(favoriteMovies));
-
-    // To reset the icon color after a certain duration, you can use setTimeout
-    setTimeout(() => {
-      setIconColor("#010025"); // Reset icon color to initial color after 3 seconds
-      setShowMessage(false);
-    }, 1000); // Reset color after 3 seconds (3000 milliseconds)
-  };
 
   const options = {
     method: "GET",
@@ -53,20 +27,17 @@ const MovieDetails = () => {
     },
   };
 
-  useEffect(
-    () => {
-      fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, options)
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
+  useEffect(() => {
+    fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, options)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
 
-          setMovies(data);
-          setLoading(false);
-        })
-        .catch((err) => console.error(err));
-    },
-    { id }
-  );
+        setMovies(data);
+        setLoading(false);
+      })
+      .catch((err) => console.error(err));
+  }, [id]);
   return (
     <div>
       <div className="w-full text-white py-3 bg-primary sticky top-0 lg:hidden">
@@ -95,24 +66,16 @@ const MovieDetails = () => {
         className={`fixed ${display} bg-primary text-white top-12 w-full z-40 border-b border-secondary lg:hidden`}
       >
         <div className="space-y-7 flex justify-center items-center flex-col py-10">
-          <NavLink to="/" activeClassName="active" className="text-lg">
+          <NavLink to="/" className="text-lg">
             Discover
           </NavLink>
-          <NavLink
-            to="/popularpage"
-            activeClassName="active"
-            className="text-lg"
-          >
+          <NavLink to="/popularpage" className="text-lg">
             Popular
           </NavLink>
-          <NavLink
-            to="/topratedpage"
-            activeClassName="active"
-            className="text-lg"
-          >
+          <NavLink to="/topratedpage" className="text-lg">
             Top Rated
           </NavLink>
-          <NavLink to="/favorite" activeClassName="active" className="text-lg">
+          <NavLink to="/favorite" className="text-lg">
             Favorite
           </NavLink>
         </div>
@@ -150,17 +113,6 @@ const MovieDetails = () => {
                   <h1 className="text-black font-bold text-xl text-center py-2 md:text-2xl">
                     {movies.title}
                   </h1>
-                  <button
-                    className="flex flex-col items-center md:hidden"
-                    onClick={handleAddToFavorites}
-                  >
-                    <MdFavoriteBorder style={{ color: iconColor }} />
-                    {showMessage && (
-                      <p className="text-xs" style={{ color: "#010025" }}>
-                        Added to favorites
-                      </p>
-                    )}
-                  </button>
                 </div>
                 <div className="flex space-x-10 items-center">
                   <div className="flex space-x-2 w-full">
@@ -173,17 +125,6 @@ const MovieDetails = () => {
                       <FaDownload style={{ color: "#FE9D00" }} />
                     </button>
                   </div>
-                  <button
-                    className="hidden md:flex flex-col items-center "
-                    onClick={handleAddToFavorites}
-                  >
-                    <MdFavoriteBorder style={{ color: iconColor }} />
-                    {showMessage && (
-                      <p className="text-xs" style={{ color: "#010025" }}>
-                        Added to favorites
-                      </p>
-                    )}
-                  </button>
                 </div>
               </div>
               <div className="space-y-1">
