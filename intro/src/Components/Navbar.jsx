@@ -10,7 +10,7 @@ const Navbar = () => {
       <nav className="w-full text-white py-3 bg-primary sticky top-0">
         <div className="flex justify-between items-center px-4 container mx-auto">
           <Link to="/" className="text-xl font-semibold">
-            Ar<span className="text-secondary">Media</span>
+            AR<span className="text-secondary">Media</span>
           </Link>
 
           <div className="space-x-10 hidden lg:flex">
