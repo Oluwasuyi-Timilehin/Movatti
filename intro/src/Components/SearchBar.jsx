@@ -13,7 +13,7 @@ const SearchBar = ({ setQuery }) => {
               setQuery(e.target.value);
             }}
           />
-          <button className="absolute text-white bg-secondary px-6 py-1.5 rounded-full -ml-[108px] mt-[2.5px]">
+          <button className="absolute text-white bg-primary px-6 py-1.5 rounded-full -ml-[108px] mt-[2.5px]">
             Search
           </button>
         </div>

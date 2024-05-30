@@ -5,21 +5,21 @@ const MovieCard = ({ searchResult }) => {
   const navigate = useNavigate();
   return (
     <>
-      {searchResult.map((searchResult) => (
+      {searchResult.map((movie) => (
         <div
-          key={searchResult.id}
-          className="h-96 rounded-xl shadow-lg"
+          key={movie.id}
+          className="h-96 rounded-xl shadow-lg cursor-pointer transition-transform transform hover:scale-105"
           onClick={() => {
-            navigate(`/MovieDetails/${searchResult.id}`);
+            navigate(`/MovieDetails/${movie.id}`);
           }}
         >
           <img
-            src={`https://image.tmdb.org/t/p/w500/${searchResult.poster_path}`}
-            alt=""
-            className="w-full h-80 object-cover"
+            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+            alt={`${movie.title} poster`}
+            className="w-full h-80 object-cover rounded-t-xl"
           />
           <p className="text-lg mt-4 ml-4 line-clamp-1 font-medium">
-            {searchResult.title}
+            {movie.title}
           </p>
         </div>
       ))}
