@@ -5,8 +5,18 @@ const Signup = () => {
   return (
     <>
       <section className="lg:flex lg:w-full lg:h-screen">
-        <div className="hidden lg:h-screen lg:w-1/2 lg:flex lg:justify-center lg:items-center lg:px-10 bg-primary">
-          <img src="./src/Images/logoresize.jpg" className="object-cover rounded-md" />
+        <div className="hidden lg:h-screen lg:w-1/2 lg:flex lg:justify-center lg:items-center lg:px-10 bg-primary relative">
+          <img
+            src="./src/Images/logoresize.jpg"
+            className="object-cover rounded-md"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary opacity-75 rounded-md"></div>
+          <div className="absolute mx-auto text-white flex flex-col justify-center items-center space-y-3 inset-0 p-5">
+            <h1 className="text-3xl font-bold">Welcome to Our Platform</h1>
+            <p className="text-xl">
+              Join us and explore a world of opportunities!
+            </p>
+          </div>
         </div>
         <div className="mx-auto w-1/2 h-screen flex flex-col items-center justify-center space-y-5">
           <p className="font-semibold lg:text-4xl">Sign Up</p>
