@@ -6,6 +6,7 @@ import Topratedpage from '../Pages/Topratedpage'
 import Favouritepage from '../Pages/Favouritepage'
 import Blog from '../Pages/Blog'
 import Signup from '../Components/Signup'
+import Login from '../Components/Login'
 
 const Routing = () => {
   return (
@@ -16,6 +17,7 @@ const Routing = () => {
           <Route path="/MovieDetails/:id" element={<MovieDetails />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/signup' element={<Signup />} />
+          <Route path='/login' element={<Login />} />
           <Route path="/topratedpage" element={<Topratedpage />} />
           <Route path="/favorite" element={<Favouritepage/>} />
         </Routes>
