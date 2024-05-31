@@ -18,8 +18,8 @@ const Signup = () => {
             </p>
           </div>
         </div>
-        <div className="mx-auto w-1/2 h-screen flex flex-col items-center justify-center space-y-5">
-          <p className="font-semibold lg:text-4xl">Sign Up</p>
+        <div className="mx-auto w-full px-10 h-screen flex flex-col items-center justify-center space-y-5 lg:w-1/2">
+          <p className="font-semibold text-2xl lg:text-4xl">Sign Up</p>
           <form className="flex w-full flex-col justify-center space-y-5 lg:border lg:border-grey lg:shadow-xl lg:px-8 lg:rounded-xl lg:py-7 lg:w-96">
             <div className="flex flex-col space-y-2">
               <label className="text-lg text-left lg:text-xl">Email</label>
