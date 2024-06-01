@@ -11,7 +11,7 @@ const Signup = () => {
             className="object-cover rounded-md"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary opacity-75 rounded-md"></div>
-          <div className="absolute mx-auto text-white flex flex-col justify-center items-center space-y-3 inset-0 p-5">
+          <div className="absolute text-center px-10 text-white flex flex-col justify-center space-y-3 inset-0">
             <h1 className="text-3xl font-bold">Welcome to Our Platform</h1>
             <p className="text-xl">
               Join us and explore a world of opportunities!
@@ -34,6 +34,14 @@ const Signup = () => {
           </div>
           <p className="font-semibold text-2xl lg:text-4xl">Sign Up</p>
           <form className="flex w-full flex-col justify-center space-y-5 lg:border lg:border-grey lg:shadow-xl lg:px-8 lg:rounded-xl lg:py-7 lg:w-96">
+            <div className="flex flex-col space-y-2">
+              <label className="text-lg text-left lg:text-xl">Name</label>
+              <input
+                type="text"
+                placeholder="Your name"
+                className="border border-grey rounded-lg px-5 py-2 focus:outline-none focus:border-secondary"
+              />
+            </div>
             <div className="flex flex-col space-y-2">
               <label className="text-lg text-left lg:text-xl">Email</label>
               <input
