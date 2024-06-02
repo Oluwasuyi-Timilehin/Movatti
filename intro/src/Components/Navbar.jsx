@@ -32,7 +32,7 @@ const Navbar = () => {
               Upcoming
             </NavLink> */}
             <NavLink to="/contact" activeclassname="active">
-              Contact Me
+              Contact Us
             </NavLink>
             <NavLink
               to="/signup"
@@ -77,7 +77,7 @@ const Navbar = () => {
             Upcoming
           </NavLink> */}
           <NavLink to="/contact" activeclassname="active">
-            Contact Me
+            Contact Us
           </NavLink>
           <NavLink
             to="/signup"
