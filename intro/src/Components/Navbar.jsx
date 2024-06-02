@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
+import { IoIosClose } from "react-icons/io";
 
 const Navbar = () => {
-  const [display, setDisplay] = useState("hidden");
-  const [isopen, setIsOpen] = useState(false);
+    const [open, setOpen] = useState(false);
+
+    const toggleMenu = () => {
+      setOpen(!open);
+    };
+
   return (
     <>
-      <nav className="w-full text-white py-2 bg-primary sticky top-0">
+      <nav className="w-full text-white py-3 bg-primary sticky top-0">
         <div className="flex justify-between items-center px-4 container mx-auto">
           <Link to="/" className="text-xl font-semibold">
             AR<span className="text-secondary">Media</span>
@@ -23,8 +28,11 @@ const Navbar = () => {
             <NavLink to="/topratedpage" activeclassname="active">
               Top Rated
             </NavLink>
-            <NavLink to="/favorite" activeclassname="active">
+            {/* <NavLink to="/favorite" activeclassname="active">
               Upcoming
+            </NavLink> */}
+            <NavLink to="/contact" activeclassname="active">
+              Contact Me
             </NavLink>
             <NavLink
               to="/signup"
@@ -35,28 +43,23 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Navbar Starts */}
-          <button
-            onClick={() => {
-              if (!isopen) {
-                setDisplay("block");
-                setIsOpen(true);
-              } else if (isopen) {
-                setDisplay("hidden");
-                setIsOpen(false);
-              }
-            }}
-            className="text-2xl lg:hidden"
-          >
-            <AiOutlineMenu />
+          <button onClick={toggleMenu} className="lg:hidden text-secondary">
+            {open ? (
+              <IoIosClose fontSize="25" />
+            ) : (
+              <AiOutlineMenu fontSize="25" />
+            )}
           </button>
 
           {/* Mobile Navbar Ends */}
         </div>
       </nav>
       <div
-        className={`fixed ${display} bg-primary h-screen text-white top-12 w-full z-40 border-b border-secondary lg:hidden`}
+        className={`fixed ${
+          open ? "block" : "hidden"
+        } bg-primary text-white w-full flex justify-center items-center z-40 lg:hidden h-screen`}
       >
-        <div className="space-y-7 flex justify-center items-center flex-col py-10">
+        <div className="space-y-10 flex justify-center items-center flex-col py-10">
           <NavLink to="/" activeclassname="active" className="text-lg">
             Discover
           </NavLink>
@@ -70,8 +73,11 @@ const Navbar = () => {
           >
             Top Rated
           </NavLink>
-          <NavLink to="/favorite" activeclassname="active" className="text-lg">
+          {/* <NavLink to="/favorite" activeclassname="active" className="text-lg">
             Upcoming
+          </NavLink> */}
+          <NavLink to="/contact" activeclassname="active">
+            Contact Me
           </NavLink>
           <NavLink
             to="/signup"
