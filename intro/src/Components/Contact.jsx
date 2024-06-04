@@ -27,7 +27,7 @@ const Contact = () => {
           </Link>
         </div>
         <div className="text-white text-center">
-          <h2 className="text-2xl font-medium pb-3">Follow Us</h2>
+          <h2 className="text-2xl font-medium pb-3">Follow U</h2>
           <div className="flex items-center justify-center space-x-4">
             <Link
               to=""
