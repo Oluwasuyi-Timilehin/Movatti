@@ -29,22 +29,13 @@ const Contact = () => {
         <div className="text-white text-center">
           <h2 className="text-2xl font-medium pb-3">Follow Us</h2>
           <div className="flex items-center justify-center space-x-4">
-            <Link
-              to=""
-              className="text-2xl"
-            >
+            <Link to="" className="text-2xl">
               <FaFacebook />
             </Link>
-            <Link
-              to=""
-              className="text-2xl"
-            >
+            <Link to="" className="text-2xl">
               <FaYoutube />
             </Link>
-            <Link
-              to=""
-              className="text-2xl"
-            >
+            <Link to="" className="text-2xl">
               <FaInstagram />
             </Link>
           </div>
