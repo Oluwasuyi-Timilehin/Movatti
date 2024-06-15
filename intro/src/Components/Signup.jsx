@@ -29,7 +29,7 @@ const Signup = () => {
               <h1 className="text-3xl font-bold">Welcome to Our Platform</h1>
               <p className="text-xl">
                 Join us and explore a world of opportunities!
-              </p>
+              </p> 
             </div>
           </div>
           <p className="font-semibold text-2xl lg:text-4xl">Sign Up</p>
