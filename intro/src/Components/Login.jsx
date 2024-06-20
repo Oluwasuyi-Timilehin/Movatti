@@ -43,7 +43,7 @@ const Login = () => {
                 />
               </div>
               <div className="flex flex-col space-y-2">
-                <label className="text-lg text-left lg:text-xl">Passwo</ label>
+                <label className="text-lg text-left lg:text-xl">Password</ label>
                 <input
                   type="password"
                   placeholder="Password"
