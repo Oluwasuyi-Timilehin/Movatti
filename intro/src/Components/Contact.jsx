@@ -35,7 +35,10 @@ const Contact = () => {
             <Link to="" className="text-2xl">
               <FaYoutube />
             </Link>
-            <Link to="" className="text-2xl">
+            <Link
+              to="https://www.instagram.com/actomania_films/"
+              className="text-2xl"
+            >
               <FaInstagram />
             </Link>
           </div>

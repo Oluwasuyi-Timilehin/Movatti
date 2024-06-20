@@ -4,11 +4,11 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { IoIosClose } from "react-icons/io";
 
 const Navbar = () => {
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-    const toggleMenu = () => {
-      setOpen(!open);
-    };
+  const toggleMenu = () => {
+    setOpen(!open);
+  };
 
   return (
     <>
