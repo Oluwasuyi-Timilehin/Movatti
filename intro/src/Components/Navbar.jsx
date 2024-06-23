@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full text-white py-3 bg-primary sticky top-0">
+      <nav className="w-full text-white py-3 bg-primary sticky top-0 z-30">
         <div className="flex justify-between items-center px-4 container mx-auto">
           <Link to="/" className="text-xl font-semibold">
             AR<span className="text-secondary">Media</span>
