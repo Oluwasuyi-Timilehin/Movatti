@@ -29,14 +29,20 @@ const Contact = () => {
         <div className="text-white text-center">
           <h2 className="text-2xl font-medium pb-3">Follow Us</h2>
           <div className="flex items-center justify-center space-x-4">
-            <Link to="" className="text-2xl">
+            <Link
+              to="https://www.facebook.com/profile.php?id=100093481572769"
+              className="text-2xl"
+            >
               <FaFacebook />
             </Link>
-            <Link to="" className="text-2xl">
+            <Link
+              to="https://www.youtube.com/@A.R.Mvisuals"
+              className="text-2xl"
+            >
               <FaYoutube />
             </Link>
             <Link
-              to="https://www.instagram.com/actomania_films/"
+              to="https://www.instagram.com/actomania_films?igsh=MW11NTBsaDlyZHZreQ=="
               className="text-2xl"
             >
               <FaInstagram />

@@ -57,7 +57,7 @@ const Navbar = () => {
       <div
         className={`fixed ${
           open ? "block" : "hidden"
-        } bg-primary text-white w-full flex justify-center items-center z-40 lg:hidden h-screen`}
+        } bg-primary text-white w-full flex justify-center top-0 items-center z-40 lg:hidden h-screen`}
       >
         <div className="space-y-10 flex justify-center items-center flex-col py-10">
           <NavLink to="/" activeclassname="active" className="text-lg">
@@ -73,9 +73,6 @@ const Navbar = () => {
           >
             Top Rated
           </NavLink>
-          {/* <NavLink to="/favorite" activeclassname="active" className="text-lg">
-            Upcoming
-          </NavLink> */}
           <NavLink to="/contact" activeclassname="active">
             Contact Us
           </NavLink>
